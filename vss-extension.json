@@ -1,0 +1,61 @@
+{
+    "manifestVersion": 1,
+    "id": "build-release-task",
+    "name": "DevOps for Snowflake CLI",
+    "version": "0.0.5",
+    "publisher": "snowflake",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Tool for installing and setting up Snowflake CLI in a pipeline agent.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "content": {
+        "details": {
+            "path": "README.md"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension"
+    },
+
+    "links": {
+        "Snowflake CLI": {
+            "uri": "https://docs.snowflake.com/en/developer-guide/snowflake-cli-v2/index"
+        },
+        "Repository": {
+            "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension"
+        },
+        "Issues": {
+            "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension/issues"
+        },
+        "License": {
+            "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension/blob/main/LICENSE"
+        }
+    },
+
+    "files": [
+        {
+            "path": "tasks/configure_snowflake_cli"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/configure_snowflake_cli"
+            }
+        }
+    ]
+}

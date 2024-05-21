@@ -1,0 +1,37 @@
+﻿trigger:
+- main
+
+schedules:
+  - cron: "0 0 * * *" # Runs at midnight UTC every day
+    displayName: Daily Midnight Run
+    branches:
+      include:
+        - main
+
+pool:
+  vmImage: ubuntu-latest
+
+- script: |
+    cat <<EOF > config.toml
+    default_connection_name = "myconnection" 
+      
+    [connections] 
+    [connections.myconnection]
+    user = "demo_user"
+    warehouse = "COMPUTE_WH"
+    database = "mytestdb"
+    schema = "PUBLIC"
+    role = "ACCOUNTADMIN"
+    region = "us-east-1"
+    EOF
+  displayName: 'Create Sample File with Multiple Lines'
+
+steps:
+- task: ConfigureSnowflakeCLI@0
+  inputs:
+    configFilePath: './config.toml'
+    cliVersion: '2.3.0'
+  displayName: SnowflakeCliTest
+
+- script: snow connection list 
+  displayName: 'Snow Version'
