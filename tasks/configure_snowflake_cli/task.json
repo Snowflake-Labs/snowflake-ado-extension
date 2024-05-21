@@ -1,0 +1,41 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "ce71430d-5197-4663-b73b-2c8045382bee",
+    "name": "ConfigureSnowflakeCLI",
+    "friendlyName": "Configure Snowflake CLI",
+    "description": "Install and configure Snowflake CLI",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Snowflake Labs",
+    "version": {
+        "Major": 0,
+        "Minor": 0,
+        "Patch": 12
+    },
+    "instanceNameFormat": "Configure Snowflake CLI",
+    "inputs": [
+        {
+            "name": "configFilePath",
+            "type": "string",
+            "label": "config.toml file path",
+            "defaultValue": "./config.toml",
+            "required": false,
+            "helpMarkDown": "The config file with the connection values"
+        },
+        {
+            "name": "snowcliVersion",
+            "type": "string",
+            "label": "Snowflake CLI version",
+            "defaultValue": "latest",
+            "required": false,
+            "helpMarkDown": "The Snowflake CLI version to be installed."
+        }
+    ],
+    "execution": {
+        "Node16": {
+            "target": "main.js"
+        }
+    }
+    }
+
+    
