@@ -1,6 +1,6 @@
 import * as path from 'path';
 import * as assert from 'assert';
-import fs = require('fs');
+import fs from 'fs';
 import * as ttm from 'azure-pipelines-task-lib/mock-test';
 import {TEMP_CONFIG_FILE_PATH, TEMP_EXEC_OUTPUT_PATH} from './constants'
 
@@ -14,8 +14,8 @@ describe('Snowflake Cli configuration', function () {
     });
 
     it('should configure files', function(done: Mocha.Done) {    
-        let tp: string = path.join(__dirname, 'successSample.js');
-        let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
+        const tp: string = path.join(__dirname, 'successSample.js');
+        const tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
     
         tr.runAsync().then(async () => {
             const test = require ('node:test');
@@ -25,14 +25,14 @@ describe('Snowflake Cli configuration', function () {
             assert.equal(tr.warningIssues.length, 0, "should have no warnings");
             assert.equal(tr.errorIssues.length, 0, "should have no errors");
             
-            let snowflakeConfigPath =  path.join(TEMP_CONFIG_FILE_PATH, "config.toml");
-            let newExecutablePath =  path.join(TEMP_EXEC_OUTPUT_PATH, 'snow');
+            const snowflakeConfigPath =  path.join(TEMP_CONFIG_FILE_PATH, "config.toml");
+            const newExecutablePath =  path.join(TEMP_EXEC_OUTPUT_PATH, 'snow');
 
             await test('Should display prepend command', () => {
                 assert.equal(tr.stdout.indexOf(`##vso[task.prependpath]${TEMP_EXEC_OUTPUT_PATH}`) >= 0, true, "should display prepend command");
             })
 
-            let content: string = fs.readFileSync(snowflakeConfigPath,'utf8');
+            const content: string = fs.readFileSync(snowflakeConfigPath,'utf8');
 
             await test('Output config.toml file should contain demo_user', () => {
                 assert.equal(content.indexOf('user = "demo_user"') >= 0, true, 'should contain demo_user');
@@ -49,8 +49,8 @@ describe('Snowflake Cli configuration', function () {
     });    
 
     it('should fail configuring config.toml file', function(done: Mocha.Done) {    
-        let tp: string = path.join(__dirname, 'configFileNotFoundSample.js');
-        let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
+        const tp: string = path.join(__dirname, 'configFileNotFoundSample.js');
+        const tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
     
         tr.runAsync().then(async () => {
             const test = require ('node:test');
@@ -66,8 +66,8 @@ describe('Snowflake Cli configuration', function () {
     });
 
     it('should fail if PIPX_BIN_DIR is not set', function(done: Mocha.Done) {    
-        let tp: string = path.join(__dirname, 'PipxBinDirNotSetSample.js');
-        let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
+        const tp: string = path.join(__dirname, 'PipxBinDirNotSetSample.js');
+        const tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
     
         tr.runAsync().then(async () => {
             const test = require ('node:test');

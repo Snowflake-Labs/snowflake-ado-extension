@@ -1,7 +1,7 @@
-﻿import tl = require('azure-pipelines-task-lib');
-import fs = require('fs');
-import os = require('os');
-import path = require('path');
+﻿import tl from 'azure-pipelines-task-lib';
+import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import * as utils from './taskutil';
 
 async function changePermissions(snowflakeConfigPath:string){
@@ -18,7 +18,7 @@ export async function setupConfigFile(configFilePath:string | undefined){
             return;
         }
 
-        let content: string = fs.readFileSync(configFilePath,'utf8');
+        const content: string = fs.readFileSync(configFilePath,'utf8');
         let snowflakeConfigPath = tl.getVariable(utils.CONFIG_TOML_FILE_OUTPUT_PATH) ?? path.join(os.homedir(), ".snowflake");
         utils.createDirectory(snowflakeConfigPath);
         snowflakeConfigPath = path.join(snowflakeConfigPath, "config.toml");

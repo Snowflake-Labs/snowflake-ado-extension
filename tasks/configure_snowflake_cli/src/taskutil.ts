@@ -1,5 +1,5 @@
 ﻿import * as task from 'azure-pipelines-task-lib';
-import fs = require('fs')
+import fs from 'fs';
 
 // Enviroment variables names
 export const PIPX_BIN_DIR = "PIPX_BIN_DIR";

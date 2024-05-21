@@ -1,11 +1,11 @@
-import tmrm = require('azure-pipelines-task-lib/mock-run');
-import path = require('path');
-import os = require('os');
+import tmrm from 'azure-pipelines-task-lib/mock-run';
+import path from 'path';
+import os from 'os';
 import {TEMP_CONFIG_FILE_PATH, TEMP_EXEC_OUTPUT_PATH} from './constants'
 
-let taskPath = path.join(__dirname, '..', '..', 'main.js');
+const taskPath = path.join(__dirname, '..', '..', 'main.js');
 
-let task: tmrm.TaskMockRunner = new tmrm.TaskMockRunner(taskPath);
+const task: tmrm.TaskMockRunner = new tmrm.TaskMockRunner(taskPath);
 process.env["PIPX_BIN_DIR"] = path.join( __dirname, 'testFiles');
 process.env["CONFIG_TOML_FILE_OUTPUT_PATH"] = TEMP_CONFIG_FILE_PATH;
 process.env["SNOW_EXECUTABLE_OUTPUT_PATH"] = TEMP_EXEC_OUTPUT_PATH;

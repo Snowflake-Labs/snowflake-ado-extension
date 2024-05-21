@@ -1,24 +1,24 @@
-﻿import fs = require('fs')
-import tl = require('azure-pipelines-task-lib');
+﻿import fs from 'fs';
+import tl from 'azure-pipelines-task-lib';
 import * as utils from './taskutil';
-import path = require('path');
+import path from 'path';
 
 /**
  * This function ensures that each time `snow` command is executed the system will use 
  * the executable installed using the Snowflake CLI task.
  */
 async function addExecutableToPathVariable(){
-    let pipx_bin_path = tl.getVariable(utils.PIPX_BIN_DIR);
+    const pipx_bin_path = tl.getVariable(utils.PIPX_BIN_DIR);
     if(pipx_bin_path === undefined)
     {
         throw new Error('Error environment variable PIPX_BIN_DIR not set');
     }
 
-    let snowExecutableName = utils.getPlatform() == utils.Platform.Windows? "snow.exe" : "snow";
-    let previous_snow_directory_path = path.join(pipx_bin_path, snowExecutableName);
-    let new_snow_directory_path = tl.getVariable(utils.SNOW_EXECUTABLE_OUTPUT_PATH) ?? path.join(pipx_bin_path, 'snow_pipx_path');
+    const snowExecutableName = utils.getPlatform() == utils.Platform.Windows? "snow.exe" : "snow";
+    const previous_snow_directory_path = path.join(pipx_bin_path, snowExecutableName);
+    const new_snow_directory_path = tl.getVariable(utils.SNOW_EXECUTABLE_OUTPUT_PATH) ?? path.join(pipx_bin_path, 'snow_pipx_path');
     utils.createDirectory(new_snow_directory_path);
-    let new_snow_executable_path = path.join(new_snow_directory_path, snowExecutableName);
+    const new_snow_executable_path = path.join(new_snow_directory_path, snowExecutableName);
     fs.copyFileSync(
         previous_snow_directory_path,
         new_snow_executable_path
@@ -46,7 +46,7 @@ async function installSnowflakeCliWithPipx(snowcliVersion:string | undefined){
 
 export async function installSnowflakeCli(snowcliVersion:string | undefined){
     try {
-        let disableSnowInstallation = tl.getVariable(utils.DISABLE_SNOW_INSTALLATION_WITH_PIPX);
+        const disableSnowInstallation = tl.getVariable(utils.DISABLE_SNOW_INSTALLATION_WITH_PIPX);
         if (disableSnowInstallation === undefined || disableSnowInstallation == 'false')
         {
             installSnowflakeCliWithPipx(snowcliVersion);
