@@ -22,11 +22,22 @@ Path to the config.toml file in your repository.
 ## Example usage
 
 ```yaml
-steps:
-- checkout: self
+trigger:
+- main
 
+pool:
+  vmImage: ubuntu-latest
+
+steps:
 - task: ConfigureSnowflakeCLI@0
   inputs:
-    snowcliVersion: '2.1.0'
     configFilePath: './config.toml'
+    snowcliVersion: '2.1.1'
+  displayName: SnowCliTest
+
+- script: snow connection test --debug
+  displayName: 'Snow Version'
+  env:
+    SNOWFLAKE_CONNECTIONS_MYCONNECTION_ACCOUNT: $(SNOWFLAKE_ACCOUNT)
+    SNOWFLAKE_CONNECTIONS_MYCONNECTION_PASSWORD: $(SNOWFLAKE_PASSWORD)
 ```
