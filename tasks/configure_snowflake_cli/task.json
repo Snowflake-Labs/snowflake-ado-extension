@@ -10,7 +10,7 @@
     "version": {
         "Major": 0,
         "Minor": 0,
-        "Patch": 12
+        "Patch": 1
     },
     "instanceNameFormat": "Configure Snowflake CLI",
     "inputs": [
