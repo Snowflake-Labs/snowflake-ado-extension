@@ -1,4 +1,4 @@
-﻿import tl from 'azure-pipelines-task-lib';
+﻿import tl = require('azure-pipelines-task-lib');
 import fs from 'fs';
 import os from 'os';
 import path from 'path';

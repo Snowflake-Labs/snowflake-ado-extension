@@ -9,14 +9,14 @@ The name is Configure Snowflake CLI
 
 ## Inputs
 
-### `snowcliVersion`
+### `cliVersion`
 
 The specified Snowflake CLI version. For example `2.1.0`.
 
 
 ### `configFilePath`
 
-Path to the config.toml file in your repository.
+Path to the config.toml file in your repository. Should be relative to repository root.
 
 
 ## Example usage
@@ -32,8 +32,8 @@ steps:
 - task: ConfigureSnowflakeCLI@0
   inputs:
     configFilePath: './config.toml'
-    snowcliVersion: '2.1.1'
-  displayName: SnowCliTest
+    cliVersion: '2.1.1'
+  displayName: SnowflakeCliTest
 
 - script: snow connection test --debug
   displayName: 'Snow Version'

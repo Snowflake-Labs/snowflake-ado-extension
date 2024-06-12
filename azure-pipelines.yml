@@ -13,7 +13,7 @@ steps:
 - task: ConfigureSnowflakeCLI@0
   inputs:
     configFilePath: './config.toml'
-  displayName: SnowCliTest
+  displayName: SnowflakeCliTest
 
 - script: ls /home/vsts/.snowflake/
   displayName: 'Snowflake Directory Files'

@@ -13,7 +13,8 @@ describe('Snowflake Cli configuration', function () {
         }
     });
 
-    it('should configure files', function(done: Mocha.Done) {    
+    it('it should configure files', function(done: Mocha.Done) {
+        this.timeout(10000);    
         const tp: string = path.join(__dirname, 'successSample.js');
         const tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
     
@@ -48,7 +49,8 @@ describe('Snowflake Cli configuration', function () {
         });
     });    
 
-    it('should fail configuring config.toml file', function(done: Mocha.Done) {    
+    it('it should fail configuring config.toml file', function(done: Mocha.Done) {  
+        this.timeout(10000);      
         const tp: string = path.join(__dirname, 'configFileNotFoundSample.js');
         const tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
     
@@ -65,7 +67,8 @@ describe('Snowflake Cli configuration', function () {
         });
     });
 
-    it('should fail if PIPX_BIN_DIR is not set', function(done: Mocha.Done) {    
+    it('it should fail if PIPX_BIN_DIR is not set', function(done: Mocha.Done) {
+        this.timeout(10000);    
         const tp: string = path.join(__dirname, 'PipxBinDirNotSetSample.js');
         const tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
     

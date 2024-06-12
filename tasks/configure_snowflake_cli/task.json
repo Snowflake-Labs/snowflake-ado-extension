@@ -20,14 +20,14 @@
             "label": "config.toml file path",
             "defaultValue": "./config.toml",
             "required": false,
-            "helpMarkDown": "The config file with the connection values"
+            "helpMarkDown": "The Snowflake CLI config file."
         },
         {
-            "name": "snowcliVersion",
+            "name": "cliVersion",
             "type": "string",
             "label": "Snowflake CLI version",
             "defaultValue": "latest",
-            "required": false,
+            "required": true,
             "helpMarkDown": "The Snowflake CLI version to be installed."
         }
     ],

@@ -1,5 +1,5 @@
 ﻿import fs from 'fs';
-import tl from 'azure-pipelines-task-lib';
+import tl = require('azure-pipelines-task-lib');
 import * as utils from './taskutil';
 import path from 'path';
 
@@ -27,16 +27,16 @@ async function addExecutableToPathVariable(){
     tl.prependPath(new_snow_directory_path);
 }
 
-async function installSnowflakeCliWithPipx(snowcliVersion:string | undefined){
+async function installSnowflakeCliWithPipx(cliVersion:string | undefined){
     let result = undefined;
     
-    if(snowcliVersion === undefined || snowcliVersion == "latest")
+    if(cliVersion === undefined || cliVersion == "latest")
     {
-        result = tl.execSync("pipx", "install snowflake-cli-labs --force");
+        result = tl.execSync("pipx", `install ${utils.SNOWFLAKE_PACKAGE_NAME} --force`);
     }
     else
     {
-        result = tl.execSync("pipx", "install snowflake-cli-labs==" +snowcliVersion + " --force");
+        result = tl.execSync("pipx", `install ${utils.SNOWFLAKE_PACKAGE_NAME}==${cliVersion} --force`);
     }
 
     if(result !== undefined && result.code != 0){
@@ -44,12 +44,12 @@ async function installSnowflakeCliWithPipx(snowcliVersion:string | undefined){
     }
 }
 
-export async function installSnowflakeCli(snowcliVersion:string | undefined){
+export async function installSnowflakeCli(cliVersion:string | undefined){
     try {
         const disableSnowInstallation = tl.getVariable(utils.DISABLE_SNOW_INSTALLATION_WITH_PIPX);
         if (disableSnowInstallation === undefined || disableSnowInstallation == 'false')
         {
-            installSnowflakeCliWithPipx(snowcliVersion);
+            installSnowflakeCliWithPipx(cliVersion);
         }
 
         addExecutableToPathVariable();

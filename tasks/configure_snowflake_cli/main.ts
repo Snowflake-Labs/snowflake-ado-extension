@@ -1,4 +1,4 @@
-import tl from 'azure-pipelines-task-lib';
+import tl = require('azure-pipelines-task-lib');
 import path from 'path';
 import * as task from 'azure-pipelines-task-lib';
 import { setupConfigFile } from './src/setupConfigFile';
@@ -8,8 +8,8 @@ async function run() {
     try {
         task.setResourcePath(path.join(__dirname, 'task.json'));
         const configFilePath: string | undefined = tl.getInput('configFilePath', false);
-        const snowcliVersion: string | undefined = tl.getInput('snowcliVersion', false);
-        installSnowflakeCli(snowcliVersion);
+        const cliVersion: string | undefined = tl.getInput('cliVersion', false);
+        installSnowflakeCli(cliVersion);
         setupConfigFile(configFilePath);
     }
     catch (err:any) {
