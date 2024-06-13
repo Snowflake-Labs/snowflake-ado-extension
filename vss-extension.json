@@ -1,0 +1,41 @@
+﻿{
+    "manifestVersion": 1,
+    "id": "build-release-task",
+    "name": "DevOps for Snowflake CLI",
+    "version": "0.0.1",
+    "publisher": "SnowflakeLabs",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Tool for installing and setting up Snowflake CLI in a pipeline agent.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "content": {
+        "details": {
+            "path": "README.md"
+        }
+    },
+    "files": [
+        {
+            "path": "tasks/configure_snowflake_cli"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/configure_snowflake_cli"
+            }
+        }
+    ]
+}
