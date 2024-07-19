@@ -1,0 +1,14 @@
+﻿name: Unit Testing for Snowflake CLI ADO extension
+on: [push]
+jobs:
+  unit-test:
+    name: Unit Test configure_snowflake_cli Task
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Run Unit Tests
+      run: |
+        cd tasks/configure_snowflake_cli
+        npm install -include=dev
+        npm test
