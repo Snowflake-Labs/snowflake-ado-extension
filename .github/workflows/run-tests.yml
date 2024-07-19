@@ -10,5 +10,6 @@ jobs:
     - name: Run Unit Tests
       run: |
         cd tasks/configure_snowflake_cli
+        unset PIPX_BIN_DIR
         npm install -include=dev
         npm test
