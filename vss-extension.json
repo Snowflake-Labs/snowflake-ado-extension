@@ -2,8 +2,8 @@
     "manifestVersion": 1,
     "id": "build-release-task",
     "name": "DevOps for Snowflake CLI",
-    "version": "0.0.1",
-    "publisher": "SnowflakeLabs",
+    "version": "0.0.2",
+    "publisher": "snowflake",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
