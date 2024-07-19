@@ -18,6 +18,7 @@
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.14.2",
     "@types/q": "^1.5.8",
+    "mocha": "^10.6.0",
     "sync-request": "^6.1.0",
     "typescript": "^5.5.3"
   }
