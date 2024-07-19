@@ -16,6 +16,7 @@ jobs:
         npm test
 
     - name: Show logs
+      if: failure()
       run: |
         cd tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest
         
