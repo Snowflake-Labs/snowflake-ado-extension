@@ -11,6 +11,10 @@ jobs:
       run: |
         cd tasks/configure_snowflake_cli
         echo $GITHUB_WORKSPACE
+        ls /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/testFiles/
+        ls /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/
+        ls /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/
+        ls /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/
         export TASK_TEST_TRACE=1
         unset PIPX_BIN_DIR
         npm install -include=dev
