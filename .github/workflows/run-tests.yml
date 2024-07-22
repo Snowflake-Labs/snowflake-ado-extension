@@ -12,6 +12,7 @@ jobs:
         cd tasks/configure_snowflake_cli
         echo $GITHUB_WORKSPACE
         ls  /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/testFiles/
+        cat /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/testFiles/config.toml
         cat /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/testFiles/snow
         cat /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/testFiles/snow
         
