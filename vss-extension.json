@@ -1,4 +1,4 @@
-﻿{
+{
     "manifestVersion": 1,
     "id": "build-release-task",
     "name": "DevOps for Snowflake CLI",
@@ -24,6 +24,23 @@
             "path": "README.md"
         }
     },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension"
+    },
+
+    "links": {
+        "Snowflake CLI": {
+            "uri": "https://docs.snowflake.com/en/developer-guide/snowflake-cli-v2/index"
+        },
+        "repository": {
+            "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension"
+        },
+        "issues": {
+            "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension/issues"
+        }
+    },
+    
     "files": [
         {
             "path": "tasks/configure_snowflake_cli"
