@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run compile && mocha tests/configureSnowflakeCliTest/_suite.js",
+    "compile": "tsc -b tsconfig.json"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,8 @@
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.14.2",
     "@types/q": "^1.5.8",
-    "sync-request": "^6.1.0"
+    "mocha": "^10.6.0",
+    "sync-request": "^6.1.0",
+    "typescript": "^5.5.3"
   }
 }
