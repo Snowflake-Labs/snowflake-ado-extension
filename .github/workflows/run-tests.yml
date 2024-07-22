@@ -10,15 +10,6 @@ jobs:
     - name: Run Unit Tests
       run: |
         cd tasks/configure_snowflake_cli
-        echo $GITHUB_WORKSPACE
-        ls  /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/testFiles/
-        cat /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/testFiles/config.toml
-        cat /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/testFiles/snow
-        cat /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/testFiles/snow
-        
-        ls /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/configureSnowflakeCliTest/
-        ls /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/tests/
-        ls /home/runner/work/snowflake-ado-extension/snowflake-ado-extension/tasks/configure_snowflake_cli/
         export TASK_TEST_TRACE=1
         unset PIPX_BIN_DIR
         npm install -include=dev
