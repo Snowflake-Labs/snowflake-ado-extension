@@ -17,9 +17,6 @@
         "default": "images/extension-icon.png"        
     },
     "content": {
-        "license": {
-            "path": "LICENSE"
-        },
         "details": {
             "path": "README.md"
         }
@@ -33,14 +30,17 @@
         "Snowflake CLI": {
             "uri": "https://docs.snowflake.com/en/developer-guide/snowflake-cli-v2/index"
         },
-        "repository": {
+        "Repository": {
             "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension"
         },
-        "issues": {
+        "Issues": {
             "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension/issues"
+        },
+        "License": {
+            "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension/blob/main/LICENSE"
         }
     },
-    
+
     "files": [
         {
             "path": "tasks/configure_snowflake_cli"
