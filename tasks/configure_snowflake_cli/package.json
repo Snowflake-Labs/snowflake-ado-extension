@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run build:dev && mocha tests/configureSnowflakeCliTest/_suite.js",
-    "create": "git clean -xdf && npm run install:prod && npm run build:prod && cd ../../ && tfx extension create --manifest-globs vss-extension.json && cd tasks/configure_snowflake_cli",
+    "create:extension": "git clean -xdf && npm run install:prod && npm run build:prod && cd ../../ && tfx extension create --manifest-globs vss-extension.json && cd tasks/configure_snowflake_cli",
     "build:dev": "tsc -b tsconfig.dev.json",
     "build:prod": "tsc -b tsconfig.prod.json",
     "install:dev": "npm install",
