@@ -19,8 +19,6 @@ To create a release follow these steps:
 1. Update the vss-extension.json and tasks/configure_snowflake_cli/task.json files with the new version number.
 2. Run the following command in `tasks/configure_snowflake_cli` directory to create the extension package:
 
-
-
 `npx run create:extension`
 
 This command executes a `git clean -xdf` and install only the required dependencies, to run tests start from the first section again.
