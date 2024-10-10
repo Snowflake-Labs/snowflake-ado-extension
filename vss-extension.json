@@ -25,7 +25,10 @@
         "type": "git",
         "uri": "https://github.com/Snowflake-Labs/snowflake-ado-extension"
     },
-
+    "galleryFlags": [
+        "Public",
+        "Preview"
+    ],
     "links": {
         "Snowflake CLI": {
             "uri": "https://docs.snowflake.com/en/developer-guide/snowflake-cli-v2/index"
