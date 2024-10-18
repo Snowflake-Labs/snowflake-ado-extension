@@ -1,27 +1,33 @@
 ﻿# Contributing to the Project
 
-## Setting development environment
+## Setting Up the Development Environment
 
-To get started with the project, you'll need to install the necessary dependencies. You can do this these commands running:
+To get started with the project, install the necessary dependencies by running the following command:
 
-`cd tasks/configure_snowflake_cli && npm run install:dev`
+```bash
+cd tasks/configure_snowflake_cli && npm run install:dev
+```
 
 ## Running Tests
 
-To test your changes, run the following command in `tasks/configure_snowflake_cli` folder :
+After setting up the development environment, you can test your changes by executing the following command in the `tasks/configure_snowflake_cli` directory:
 
-`npm run test`
+```bash
+npm run test
+```
 
 ## Creating a Release
 
-To create a release follow these steps:
+Follow these steps to create a release:
 
-1. Update the vss-extension.json and tasks/configure_snowflake_cli/task.json files with the new version number.
-2. Run the following command in `tasks/configure_snowflake_cli` directory to create the extension package:
+1. **Update Version Numbers**: Modify the `vss-extension.json` and `tasks/configure_snowflake_cli/task.json` files to reflect the new version number.
 
-`npx run create:extension`
+2. **Set Up the Release Environment**: Navigate to the `tasks/configure_snowflake_cli` directory and execute the following command to create the extension:
 
-This command executes a `git clean -xdf` and install only the required dependencies, to run tests start from the first section again.
+   ```bash
+   npx run create:extension
+   ```
 
+3. **Publish in Development Mode**: To publish your extension in **development mode**, remove the `"galleryFlags"` field from the `vss-extension.json` file. This ensures that your extension is published as private.
 
-For futher information in package and publish the extension you can go to: [package and publish extensions](https://learn.microsoft.com/en-us/azure/devops/extend/publish/overview?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops)
+4. **Packaging and Publishing**: For detailed instructions on packaging and publishing your extension, refer to this guide: [Package and Publish Extensions](https://learn.microsoft.com/en-us/azure/devops/extend/publish/overview?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops).
